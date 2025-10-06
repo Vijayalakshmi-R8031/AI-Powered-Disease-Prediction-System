@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Predict - AI Disease Predictor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="predict.html">Predict</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h1>Disease Risk Predictor (Demo)</h1>
+    <p>Fill the form below — the demo model will return a risk score and suggestion.</p>
+
+    <div class="form-grid">
+      <label>Age</label>
+      <input type="number" id="age" placeholder="Years" min="0" max="120" />
+
+      <label>Fever</label>
+      <select id="fever">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+
+      <label>Cough</label>
+      <select id="cough">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+
+      <label>Fatigue (0-5)</label>
+      <input type="number" id="fatigue" min="0" max="5" value="0" />
+
+      <label>Breathing difficulty</label>
+      <select id="breath">
+        <option value="0">No</option>
+        <option value="1">Mild</option>
+        <option value="2">Severe</option>
+      </select>
+
+      <label>Pre-existing condition</label>
+      <select id="preexist">
+        <option value="0">None</option>
+        <option value="1">Diabetes</option>
+        <option value="1.2">Hypertension</option>
+        <option value="1.5">Other (higher risk)</option>
+      </select>
+    </div>
+
+    <div style="text-align:center; margin-top:12px;">
+      <button id="predict-btn" class="btn">Predict Risk</button>
+      <button id="reset-btn" class="btn muted">Reset</button>
+    </div>
+
+    <div id="prediction-output" class="card" aria-live="polite" style="margin-top:16px;">
+      <h3>Result</h3>
+      <p id="risk-text">No prediction yet.</p>
+      <p id="advice-text"></p>
+    </div>
+
+    <p class="small">This is a demo. For real symptoms contact a medical professional.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
